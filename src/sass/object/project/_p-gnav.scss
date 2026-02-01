@@ -1,0 +1,142 @@
+@use "global" as *;
+
+.p-gnav {
+  position: fixed;
+  inset: 0;
+  background-color: $yellow;
+  z-index: 200;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0s linear 0.25s;
+  @include mq (md) {
+    position: static;
+    inset: auto;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    background: transparent;
+    z-index: auto;
+    transition: none;
+  }
+}
+
+.p-gnav.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 0.25s ease, visibility 0s;
+}
+
+.p-gnav__close {
+  width: rem(35);
+  height: rem(35);
+  border: rem(1) solid $orange;
+  border-radius: 50%;
+  background-color: $white;
+  position: relative;
+  cursor: pointer;
+}
+
+.p-gnav__close::before,
+.p-gnav__close::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: rem(21);
+  height: rem(2);
+  border-radius: rem(6);
+  background: $orange;
+}
+
+.p-gnav__close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.p-gnav__close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.p-gnav.is-open .p-gnav__close {
+  display: inline-block;
+}
+
+.p-gnav__header {
+  height: rem(60);
+  padding: 0 rem(20);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  @include mq(md) {
+    display: none;
+  }
+}
+
+.p-gnav__inner {
+  height: 100%;
+  padding-top: rem(135);
+  display: flex;
+  justify-content: center;
+  @include mq(md) {
+    height: auto;
+    padding-top: 0;
+    display: block;
+  }
+}
+
+.p-gnav__list {
+  width: rem(192);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: rem(64);
+  @include mq(md) {
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+    gap: rem(30);
+    white-space: nowrap;
+  }
+}
+
+.p-gnav__link {
+  text-decoration: none;
+  color: $orange;
+  font-size: rem(24);
+  letter-spacing: 0.03em;
+  @include mq(md) {
+    color: $black;
+    font-size: rem(18);
+  }
+}
+
+.p-gnav__link:hover {
+  @include mq(md) {
+    color: $orange;
+    opacity: 1;
+  }
+}
+
+.p-gnav__item--contact .p-gnav__button {
+  @include mq(md) {
+    width: rem(150);
+    height: rem(80);
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+}
+
+.p-gnav__item {
+  line-height: calc(29 / 24);
+}

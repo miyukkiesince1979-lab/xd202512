@@ -1,0 +1,40 @@
+@use "global" as *;
+
+.c-button {
+  display: block;
+  color: $white;
+  background-color: $orange;
+  font-size: rem(17);
+  line-height: calc(20 / 17);
+  border-radius: rem(6);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  padding: rem(15);
+  text-align: center;
+  border: rem(1) solid transparent;
+  width: rem(192);
+  margin: 0 auto;
+}
+
+.c-button:hover {
+  @include mq(md) {
+    color: $orange;
+    background-color: $white;
+    border: rem(1) solid $orange;
+  }
+}
+
+// 白
+.c-button--white {
+  color: $orange;
+  background-color: $white;
+  border: rem(1) solid $orange;
+}
+
+.c-button--white:hover {
+  @include mq(md) {
+    color: $white;
+    background-color: $orange;
+    border: rem(1) solid transparent;    
+  }
+}

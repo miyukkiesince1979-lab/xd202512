@@ -5,27 +5,27 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <meta name="format-detection" content="telephone=no" />
   <!-- meta情報 -->
-  <title>タイトル</title>
-  <meta name="description" content="" />
-  <meta name="keywords" content="" />
+  <title>CSS設計マスター課題|コードアシスト</title>
+  <meta name="description" content="CSS設計を理解するための練習課題サイトです。FLOCSSやBEM記法を使い、gulp環境でコーディングを行なっています。
+  " />
   <!-- ogp -->
-  <meta property="og:title" content="" />
-  <meta property="og:type" content="" />
-  <meta property="og:url" content="" />
-  <meta property="og:image" content="" />
-  <meta property="og:site_name" content="" />
-  <meta property="og:description" content="" />
+  <meta property="og:title" content="CSS設計マスター課題｜コードアシスト" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://hogehoge.com/" />
+  <meta property="og:image" content="http://hogehoge.com/images/ogp-img.jpg" />
+  <meta property="og:site_name" content="CSS設計マスター課題" />
+  <meta property="og:description" content="CSS設計を理解するための練習課題サイトです。FLOCSSやBEM記法を使い、gulp環境でコーディングを行なっています。" />
 
   <meta name="robots" content="noindex, nofollow" /> <!-- 検索エンジンにインデックスしないよう指示 -->
   <meta name="googlebot" content="noindex, nofollow" /> <!-- Googleのクローラーにインデックスしないよう指示 -->
   <meta name="msnbot" content="noindex, nofollow" /> <!-- Bingのクローラーにインデックスしないよう指示 -->
   <meta name="slurp" content="noindex, nofollow" /> <!-- Yahooのクローラーにインデックスしないよう指示 -->
   <!-- ファビコン -->
-  <!-- <link rel="icon" href="" /> -->
+  <link rel="icon" href="./images/favicon.png" />
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
   <!-- css -->
   <link rel="stylesheet" href="./css/styles.min.css">
   <!-- JavaScript -->
@@ -33,11 +33,214 @@
   <script defer src="./js/script.min.js"></script>
 </head>
 <body>
-  <div class="l-inner">
-    <p class="p-test">サイトが表示されました!</p>
-    <div class="p-test__img">
-      <img src="./images/dummy1.webp" alt="サンプル画像" type="image/webp" width="3600" height="2400" loading="lazy" decoding="async">
+  <!-- header -->
+  <header class="l-header p-header">
+    <div class="p-header__inner">
+      <h1 class="p-header__logo">
+        <a href="/" class="p-header__logolink"><img class="p-header__logoimage" src="./images/logo.png" alt="CSS Design" width="138" height="25"></a>
+      </h1>
+      <!-- ハンバーガーボタン -->
+      <button class="p-header__hamburger c-hamburger" type="button" aria-controls="global-menu" aria-expanded="false" aria-label="メニューを開く">
+        <span class="c-hamburger__bar" aria-hidden="true"></span>
+        <span class="c-hamburger__bar" aria-hidden="true"></span>
+        <span class="c-hamburger__bar" aria-hidden="true"></span>
+      </button>
+      <!-- ドロワーメニュー -->
+      <nav class="p-header__gnav p-gnav" id="global-menu" aria-hidden="true">
+        <div class="p-gnav__header">
+          <div class="p-gnav__logo">
+            <a href="/" class="p-gnav__logollink"><img class="p-gnav__logoimage" src="./images/logo.png" alt="CSS Design" width="138" height="25"></a>
+          </div>
+          <button class="p-gnav__close" type="button" aria-label="メニューを閉じる"></button>
+        </div>
+        <div class="p-gnav__inner">
+          <ul class="p-gnav__list">
+            <li class="p-gnav__item"><a class="p-gnav__link" href="#blog">BLOG</a></li>
+            <li class="p-gnav__item"><a class="p-gnav__link" href="#products">PRODUCTS</a></li>
+            <li class="p-gnav__item"><a class="p-gnav__link" href="#news">NEWS</a></li>
+            <li class="p-gnav__item p-gnav__item--contact"><a href="#" class=" p-gnav__button c-button">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
     </div>
-  </div>
+  </header>
+  <main>
+    <!-- MainView -->
+    <section class="p-hero">
+      <div class="p-hero__inner">
+        <h1 class="p-hero__title">
+          The largest community
+          <br class="u-sp">of photo enthusiasts
+        </h1>
+      </div>
+    </section>
+    <!-- BLOGセクション -->
+    <section class="l-section p-blog" id="blog">
+      <div class="p-blog__inner">
+        <h2 class="p-blog__title c-title">
+          <span class="c-title__en" aria-hidden="true">BLOG</span>
+          <span class="c-title__jp">ブログ</span>
+        </h2>
+        <p class="p-blog__text u-pc">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+        </p>
+        <div class="p-blog__cards">
+          <div class="c-card">
+            <picture class="c-card__image">
+              <source srcset="./images/card.webp" type="image/webp" />
+              <img src="./images/card.png" alt="カード画像" width="333" height="215" loading="lazy" decoding="async" />
+            </picture>
+            <div class="c-card__body">
+              <h3 class="c-card__title">Lorem ipsum dolor</h3>
+              <p class="c-card__text">Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+            </div>
+          </div>
+          <div class="c-card">
+            <picture class="c-card__image">
+              <source srcset="./images/card.webp" type="image/webp" />
+              <img src="./images/card.png" alt="カード画像" width="333" height="215" loading="lazy" decoding="async" />
+            </picture>
+            <div class="c-card__body">
+              <h3 class="c-card__title">Lorem ipsum dolor</h3>
+              <p class="c-card__text">Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+            </div>
+          </div>
+          <div class="c-card">
+            <picture class="c-card__image">
+              <source srcset="./images/card.webp" type="image/webp" />
+              <img src="./images/card.png" alt="カード画像" width="333" height="215" loading="lazy" decoding="async" />
+            </picture>
+            <div class="c-card__body">
+              <h3 class="c-card__title">Lorem ipsum dolor</h3>
+              <p class="c-card__text">Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="p-blog__more c-button">More</a>
+      </div>
+    </section>
+    <!-- PRODUCTSセクション -->
+    <section class="l-section p-products" id="products">
+      <div class="p-products__inner">
+        <h2 class="p-products__title c-title">
+          <span class="c-title__en" aria-hidden="true">PRODUCTS</span>
+          <span class="c-title__jp">プロダクト</span>
+        </h2>
+        <div class="p-products__cards">
+          <div class="c-card">
+            <picture class="c-card__image">
+              <source srcset="./images/card.webp" type="image/webp" />
+              <img src="./images/card.png" alt="カード画像" width="333" height="215" loading="lazy" decoding="async" />
+            </picture>
+            <div class="c-card__body">
+              <h3 class="c-card__title">Lorem ipsum dolor</h3>
+              <p class="c-card__text">Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+            </div>
+          </div>
+          <div class="c-card">
+            <picture class="c-card__image">
+              <source srcset="./images/card.webp" type="image/webp" />
+              <img src="./images/card.png" alt="カード画像" width="333" height="215" loading="lazy" decoding="async" />
+            </picture>
+            <div class="c-card__body">
+              <h3 class="c-card__title">Lorem ipsum dolor</h3>
+              <p class="c-card__text">Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+            </div>
+          </div>
+          <div class="c-card">
+            <picture class="c-card__image">
+              <source srcset="./images/card.webp" type="image/webp" />
+              <img src="./images/card.png" alt="カード画像" width="333" height="215" loading="lazy" decoding="async" />
+            </picture>
+            <div class="c-card__body">
+              <h3 class="c-card__title">Lorem ipsum dolor</h3>
+              <p class="c-card__text">Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+            </div>
+          </div>
+          <div class="c-card">
+            <picture class="c-card__image">
+              <source srcset="./images/card.webp" type="image/webp" />
+              <img src="./images/card.png" alt="カード画像" width="333" height="215" loading="lazy" decoding="async" />
+            </picture>
+            <div class="c-card__body">
+              <h3 class="c-card__title">Lorem ipsum dolor</h3>
+              <p class="c-card__text">Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="p-products__more c-button c-button--white">More</a>
+      </div>
+    </section>
+    <!-- NEWSセクション -->
+    <section class="l-section p-news" id="news">
+      <div class="p-news__inner">
+        <h2 class="p-news__title c-title">
+          <span class="c-title__en" aria-hidden="true">NEWS</span>
+          <span class="c-title__jp">ニュース</span>
+        </h2>
+        <div class="p-news__cards">
+          <div class="c-card">
+            <picture class="c-card__image">
+              <source srcset="./images/card.webp" type="image/webp" />
+              <img src="./images/card.png" alt="カード画像" width="333" height="215" loading="lazy" decoding="async" />
+            </picture>
+            <div class="c-card__body">
+              <h3 class="c-card__title">Lorem ipsum <span class="u-sp">dolor</span></h3>
+              <p class="c-card__text">Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+            </div>
+          </div>
+          <div class="c-card">
+            <picture class="c-card__image">
+              <source srcset="./images/card.webp" type="image/webp" />
+              <img src="./images/card.png" alt="カード画像" width="333" height="215" loading="lazy" decoding="async" />
+            </picture>
+            <div class="c-card__body">
+              <h3 class="c-card__title">Lorem ipsum <span class="u-sp">dolor</span></h3>
+              <p class="c-card__text">Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+            </div>
+          </div>
+          <div class="c-card">
+            <picture class="c-card__image">
+              <source srcset="./images/card.webp" type="image/webp" />
+              <img src="./images/card.png" alt="カード画像" width="333" height="215" loading="lazy" decoding="async" />
+            </picture>
+            <div class="c-card__body">
+              <h3 class="c-card__title">Lorem ipsum <span class="u-sp">dolor</span></h3>
+              <p class="c-card__text">Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+            </div>
+          </div>
+          <div class="c-card">
+            <picture class="c-card__image">
+              <source srcset="./images/card.webp" type="image/webp" />
+              <img src="./images/card.png" alt="カード画像" width="333" height="215" loading="lazy" decoding="async" />
+            </picture>
+            <div class="c-card__body">
+              <h3 class="c-card__title">Lorem ipsum <span class="u-sp">dolor</span></h3>
+              <p class="c-card__text">Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+            </div>
+          </div>
+        </div>
+        <p class="p-news__text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+        </p>
+        <a href="#" class="p-news__more c-button">More</a>
+      </div>
+    </section>
+  </main>
+  <!-- footer -->
+  <footer class="l-footer p-footer">
+    <div class="p-footer__inner">
+      <nav class="p-footer__nav">
+        <ul class="p-footer__list">
+          <li class="p-footer__item"><a class="p-footer__link" href="#blog">BLOG</a></li>
+          <li class="p-footer__item"><a class="p-footer__link" href="#products">PRODUCTS</a></li>
+          <li class="p-footer__item"><a class="p-footer__link" href="#news">NEWS</a></li>
+        </ul>
+      </nav>
+      <p class="p-footer__copyright">
+        © codoassist
+      </p>
+    </div>
+  </footer>
 </body>
 </html>

@@ -1,29 +1,5 @@
 
 jQuery(function ($) {
-
-  // ページトップボタン
-  var topBtn = $('.js-pagetop');
-  topBtn.hide();
-
-  // ページトップボタンの表示設定
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 70) {
-      // 指定px以上のスクロールでボタンを表示
-      topBtn.fadeIn();
-    } else {
-      // 画面が指定pxより上ならボタンを非表示
-      topBtn.fadeOut();
-    }
-  });
-
-  // ページトップボタンをクリックしたらスクロールして上に戻る
-  topBtn.click(function () {
-    $('body,html').animate({
-      scrollTop: 0
-    }, 300, 'swing');
-    return false;
-  });
-
   // スムーススクロール (絶対パスのリンク先が現在のページであった場合でも作動。ヘッダーの高さ考慮。)
   $(document).on('click', 'a[href*="#"]', function () {
     let time = 400;
@@ -35,4 +11,31 @@ jQuery(function ($) {
     return false;
   });
 
+  $(function () {
+    const $hamburger = $('.p-header__hamburger');
+    const $gnav = $('#global-menu');
+    const $close = $('.p-gnav__close');
+
+    function openMenu() {
+      $hamburger.addClass('is-open').attr('aria-expanded', 'true');
+      $gnav.addClass('is-open').attr('aria-hidden', 'false');
+    }
+
+    function closeMenu() {
+      $hamburger.removeClass('is-open').attr('aria-expanded', 'false');
+      $gnav.removeClass('is-open').attr('aria-hidden', 'true');
+    }
+
+    $hamburger.on('click', function () {
+      $gnav.hasClass('is-open') ? closeMenu() : openMenu();
+    });
+
+    $close.on('click', function () {
+      closeMenu();
+    });
+
+    $gnav.find('a').on('click', function () {
+      closeMenu();
+    });
+  });
 });

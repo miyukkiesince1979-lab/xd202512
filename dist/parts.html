@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta name="format-detection" content="telephone=no" />
+  <!-- meta情報 -->
+  <title>CSS設計マスター課題｜コードアシスト</title>
+  <meta name="description" content="CSS設計を理解するための練習課題サイトです。FLOCSSやBEM記法を使い、gulp環境でコーディングを行なっています。
+" />
+  <!-- ogp -->
+  <meta property="og:title" content="CSS設計マスター課題｜コードアシスト" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://hogehoge.com/" />
+  <meta property="og:image" content="http://hogehoge.com/images/ogp-img.jpg" />
+  <meta property="og:site_name" content="CSS設計マスター課題" />
+  <meta property="og:description" content="CSS設計を理解するための練習課題サイトです。FLOCSSやBEM記法を使い、gulp環境でコーディングを行なっています。" />
+
+  <meta name="robots" content="noindex, nofollow" /> <!-- 検索エンジンにインデックスしないよう指示 -->
+  <meta name="googlebot" content="noindex, nofollow" /> <!-- Googleのクローラーにインデックスしないよう指示 -->
+  <meta name="msnbot" content="noindex, nofollow" /> <!-- Bingのクローラーにインデックスしないよう指示 -->
+  <meta name="slurp" content="noindex, nofollow" /> <!-- Yahooのクローラーにインデックスしないよう指示 -->
+  <!-- ファビコン -->
+  <link rel="icon" href="./images/favicon.png" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+  <!-- css -->
+  <link rel="stylesheet" href="./css/styles.min.css">
+  <!-- JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script defer src="./js/script.min.js"></script>
+</head>
+<body>
+  <div class="l-inner">
+    <!-- セクションタイトル -->
+    <h2 class="c-title">
+      <span class="c-title__en" aria-hidden="true">BLOG</span>
+      <span class="c-title__jp">ブログ</span>
+    </h2>
+    <!-- ボタン -->
+    <a href="#" class="c-button l-button">More</a>
+    <a href="#" class="c-button l-button c-button--white">More</a>
+
+    <!-- カード -->
+    <div class="c-card">
+      <picture class="c-card__image">
+        <source srcset="./images/card.webp" type="image/webp" />
+        <img src="./images/card.png" alt="カード画像" width="333" height="215" loading="lazy" decoding="async" />
+      </picture>
+      <div class="c-card__body">
+        <h3 class="c-card__title">Lorem ipsum dolor</h3>
+        <p class="c-card__text">Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

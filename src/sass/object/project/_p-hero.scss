@@ -1,0 +1,35 @@
+@use "global" as *;
+
+.p-hero {
+  background-image: url(../images/hero-sp.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: rem(545);
+  margin-top: rem(60);
+  position: relative;
+  @include mq(md) {
+    background-image: url(../images/hero-pc.png);
+    height: rem(780);
+    margin-top: rem(80);
+  }
+}
+
+.p-hero__inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.p-hero__title {
+  color: $white;
+  font-size: rem(26);
+  line-height: calc(36 / 26);
+  font-weight: 700;
+  text-align: center;
+  @include mq(md) {
+    font-size: rem(56);
+    line-height: calc(80 / 56);
+  }
+}

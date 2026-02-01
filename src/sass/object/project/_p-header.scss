@@ -1,0 +1,46 @@
+@use "global" as *;
+
+.p-header {
+  background-color: $yellow;
+}
+
+.p-header__inner {
+  height: rem(60);
+  padding: 0 rem(20);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include mq(md) {
+    height: rem(80);
+    padding-right: 0;
+    padding-left: rem(40);
+  }
+}
+
+.p-header__logolink {
+  display: block;
+}
+
+.p-header__logoimage {
+  display: block;
+  width: rem(138);
+  height: auto;
+  @include mq(md) {
+    width: rem(206);
+  }
+}
+
+.p-header__hamburger.c-hamburger {
+  width: rem(30);
+  height: rem(30);
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  @include mq (md) {
+    display: none;
+  }
+}
+
+.p-header__hamburger.is-open {
+  visibility: hidden;
+}

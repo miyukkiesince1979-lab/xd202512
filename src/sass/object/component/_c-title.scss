@@ -1,0 +1,35 @@
+@use "global" as *;
+
+.c-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include mq(md) {
+    align-items: flex-end;
+    width: fit-content;
+  }
+}
+
+.c-title__en {
+  color: $orange;
+  font-weight: 700;
+  font-size: rem(36);
+  line-height: calc(44 / 36);
+  @include mq(md) {
+    font-size: rem(48);
+    line-height: calc(58 / 48);
+  }
+}
+
+.c-title__jp {
+  font-family: $font-sub;
+  font-weight: 400;
+  font-size: rem(14);
+  letter-spacing: 0.03em;
+  line-height: calc(20 / 14);
+  @include mq(md) {
+    font-size: rem(20);
+    line-height: calc(29 / 20);
+  }
+}
+

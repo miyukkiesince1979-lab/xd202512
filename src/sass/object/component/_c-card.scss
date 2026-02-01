@@ -1,0 +1,39 @@
+@use "global" as *;
+
+.c-card {
+  border: rem(1) solid rgba($black2, 0.5);
+}
+
+.c-card__image {
+  width: 100%;
+}
+
+.c-card__image img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 333 / 215;
+  object-fit: cover;
+  @include mq(md) {
+    aspect-ratio: 343 / 219;
+  }
+}
+
+.c-card__body {
+  background-color: $white;
+  padding: rem(30) rem(20) rem(25);
+}
+
+.c-card__title {
+  font-size: rem(24);
+  font-weight: 700;
+  color: $black2;
+  line-height: calc(29 / 24);
+}
+
+.c-card__text {
+  font-size: rem(18);
+  line-height: calc(30 / 18);
+  margin-top: rem(26);
+
+}
+

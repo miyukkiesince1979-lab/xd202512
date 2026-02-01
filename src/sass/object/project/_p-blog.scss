@@ -1,0 +1,46 @@
+@use "global" as *;
+
+.p-blog {
+  background-color: $white;
+}
+
+.p-blog__inner {
+  margin: 0 auto;
+  padding: rem(60) rem(20);
+  @include mq(md) {
+  padding: rem(120) rem(170);
+  }
+}
+
+.p-blog__title {
+  margin-left: auto;
+}
+
+.p-blog__text {
+  @include mq (md) {
+    font-size: rem(36);
+    line-height: calc(50 / 36);
+    text-align: right;
+    margin-top: rem(58);
+  }
+}
+
+.p-blog__cards {
+  display: grid;
+  gap: rem(25);
+  margin-top: rem(30);
+  @include mq (md) {
+    grid-template-columns: repeat(3,1fr);
+    gap: rem(33);
+    margin-top: rem(77);
+  }
+}
+
+.p-blog__more {
+  width: rem(192);
+  margin-top: rem(50);
+  @include mq (md) {
+    margin-top: rem(80);
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,51 @@
+@use "global" as *;
+
+.p-products {
+  background-color: $yellow;
+}
+
+.p-products__inner {
+  margin: 0 auto;
+  padding: rem(60) rem(20);
+  @include mq(md) {
+  padding: rem(120) rem(170);
+  display: grid;
+  grid-template-columns: rem(283) 1fr;
+  column-gap: rem(97);
+  grid-template-areas: 
+  "title cards"
+  "title more";
+  align-items: start;
+  }
+}
+
+.p-products__title {
+  @include mq (md) {
+    grid-area: title;
+    margin-bottom: 0;
+    align-self: center;
+    transform: translateY(rem(-65));
+  }
+}
+
+.p-products__cards {
+  display: grid;
+  gap: rem(25);
+  margin-top: rem(30);
+  @include mq (md) {
+    grid-area: cards;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(25) rem(30);
+    margin-top: 0;
+  }
+}
+
+.p-products__more {
+  width: rem(192);
+  margin-top: rem(50);
+  @include mq(md) {
+    margin-left: auto;
+    margin-right: 0;
+    margin-top: rem(80);
+  }
+}
